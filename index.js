@@ -13,7 +13,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/task", taskRouter);
-app.use(noteRouter);
+app.use("/note", noteRouter);
+
+
 
 
 

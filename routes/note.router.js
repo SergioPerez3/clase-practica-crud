@@ -2,11 +2,25 @@ import { Router } from "express";
 
 const router = Router();
 
-import Note from "../models/Note.js"
+import {
+    getNotes,
+    getNoteById,
+    createNote,
+    updateNote,
+    deleteNote,
 
-router.get("/note", async (req, res) => {
-    const notes = await Note.find()
-    res.json(notes);
-})
+
+} from "../controllers/note.controller.js"
+
+
+
+router.post("/", createNote);
+
+router.get("/", getNotes);
+router.get("/:id", getNoteById);
+
+router.put("/:id", updateNote);
+
+router.delete("/:id", deleteNote);
 
 export default router;

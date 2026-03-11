@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema({
     title: String,
-    completed: String,
+    completed: Boolean,
 });
 
 const Task = mongoose.model("Task", taskSchema);
